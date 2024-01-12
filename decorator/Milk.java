@@ -1,14 +1,18 @@
 package decorator;
 
+import abstractComponent.Beverage;
+
 public class Milk extends CondimentDecorator{
 
-
+    public Milk(Beverage beverage){
+        this.beverage = beverage;
+    }
     @Override
     public float cost() {
-        return 0;
+        return beverage.cost()+0.10f;
     }
 
     public String getDescription(){
-        return super.getDescription();
+        return beverage.getDescription()+", Milk";
     }
 }
